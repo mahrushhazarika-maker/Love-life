@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ For Someone Special ❤️</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ff4d6d,#ff8fab,#ffc2d1);
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    text-align:center;
+    color:white;
+    z-index:2;
+}
+
+.teddy{
+    font-size:120px;
+    cursor:pointer;
+    animation:bounce 2s infinite;
+}
+
+h1{
+    font-size:55px;
+    text-shadow:0 0 10px white;
+    animation:glow 1.5s infinite alternate;
+}
+
+p{
+    font-size:22px;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:white;
+    color:#ff3366;
+    font-weight:bold;
+}
+
+#message{
+    display:none;
+    margin-top:20px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.fall{
+    position:absolute;
+    top:-50px;
+    animation:fall linear infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+}
+
+@keyframes glow{
+    from{opacity:.8;}
+    to{opacity:1;text-shadow:0 0 25px white;}
+}
+
+@keyframes fall{
+    from{transform:translateY(-50px);}
+    to{transform:translateY(110vh);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="teddy" onclick="showLove()">🧸❤️</div>
+
+    <h1>I LOVE YOU ❤️</h1>
+
+    <p>You are the most beautiful part of my life.</p>
+
+    <button onclick="showLove()">Click Me 💖</button>
+
+    <div id="message">
+        🌹 Every heartbeat reminds me of you.<br>
+        ❤️ I Love You Forever ❤️
+    </div>
+</div>
+
+<script>
+function showLove(){
+    document.getElementById("message").style.display="block";
+}
+
+function createItem(){
+    const item=document.createElement("div");
+    item.className="fall";
+    item.innerHTML=Math.random()>0.5?"❤️":"🌹";
+    item.style.left=Math.random()*100+"vw";
+    item.style.fontSize=(20+Math.random()*20)+"px";
+    item.style.animationDuration=(4+Math.random()*5)+"s";
+    document.body.appendChild(item);
+
+    setTimeout(()=>item.remove(),9000
